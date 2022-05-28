@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light">
+  <div class="container-fluid d-flex ">
+    <router-link class="navbar-brand" routerLink="/">IMBD</router-link>
+
+    <!-- <form class="d-flex" #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <input class="nav-search search form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn nav-search-btn" type="submit">Search</button>
+    </form> -->
+
+    <router-link class="text-light fav" routerLink="/favMovies">your fav
+      <fa-icon [icon]="['far','heart']" ></fa-icon>
+    </router-link>
+    <div class="bg-dark  position-relative p-2 cont"  *ngIf=" authService.currentUser$ | async as user ; else loginButton">
+      <a class="btn btn-primary position-absolute logout-btn" routerLink="/login" (click)="logout()">
+        logout
+      </a>
+      <span class="text-light" *ngIf="user$ |async as user">welcome {{user.email}}</span>
+    </div>
+    <ng-template #loginButton class="text-light">
+      <button class="btn btn-primary" routerLink="login">
+           login
+      </button>
+    </ng-template>
+
+
+  </div>
+</nav>

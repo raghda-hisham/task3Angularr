@@ -1,0 +1,53 @@
+.comments{
+  width: 70%;
+}
+
+.user-img{
+  width: 15%;
+  padding: 10px;
+  /* background-color: red; */
+  height: 100%;
+  text-align: center;
+
+}
+.user-img img{
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
+}
+.comment-left,.replay-comment{
+  width: 85%;
+
+}
+.comment-text{
+  width: 85%;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #555;
+}
+
+.comment-text h3{
+  font-weight: bold;
+  font-size: 1.50rem;
+}
+.comment-text p{
+  color: gray;
+}
+.replay-delete{
+  color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+
+}
+.add-comment{
+  width: 70%;
+}
+
+.replay , .delete{
+   cursor: pointer;
+}

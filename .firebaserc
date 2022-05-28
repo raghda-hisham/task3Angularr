@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-movies-23e73": {
+      "hosting": {
+        "task3": [
+          "angular-movies-23e73"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-movies-23e73"
+  }
+}

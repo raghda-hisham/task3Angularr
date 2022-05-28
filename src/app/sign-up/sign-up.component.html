@@ -1,0 +1,26 @@
+<div class="form-container pt-5">
+  <h2 class="text-center text-light ">signUp a new user</h2>
+  <form  [formGroup]="signUpForm" (ngSubmit)="submit()" class="d-flex flex-column p-3 justify-content-between">
+
+    <input  matInput name="name"  type="name" formControlName="name" placeholder="name" required email>
+
+    <div class="alert alert-danger" *ngIf="name?.errors?.['required']" >name is required</div>
+
+    <input  matInput name="email"  type="email" formControlName="email" placeholder="email" required email>
+
+    <div class="alert alert-danger" *ngIf="email?.errors?.['required']" >email is required</div>
+    <div class="alert alert-danger" *ngIf="email?.errors?.['required']">please enter a correct email format</div>
+
+    <input   name="password"   type="password"  formControlName="password"  placeholder="password" required minlenght="6">
+    <div class="alert alert-danger" *ngIf="password?.errors?.['required']">email is required</div>
+
+    <input   name="confirmPassword"    type="password"   formControlName="confirmPassword"  placeholder="confirmPassword" required minlenght="6">
+    <div class="alert alert-danger" *ngIf="confirmPassword?.errors?.['required']">confirmPasswor is required</div>
+     <div *ngIf="signUpForm.errors?.['passwordDontMatch']">
+       password dont match
+     </div>
+    <div class="ceter mt-3">
+      <button class="btn btn-primary sign-btn" type="submit" (click)="submit()">signUp</button>
+    </div>
+  </form>
+</div>

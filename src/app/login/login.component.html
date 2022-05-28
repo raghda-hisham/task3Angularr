@@ -1,0 +1,18 @@
+<div class="form-container pt-5">
+    <h2 class="text-center text-light">login</h2>
+    <form  [formGroup]="loginForm" (ngSubmit)="submit()" class="d-flex flex-column p-3 justify-content-between">
+
+        <input  matInput name="email"  type="email" formControlName="email" placeholder="email" required email>
+
+      <div class="alert alert-danger" *ngIf="email?.errors?.['required']" >email is required</div>
+      <div class="alert alert-danger" *ngIf="email?.errors?.['email']">please enter a correct email format</div>
+
+      <input   name="password"   type="password"  formControlName="password"  placeholder="password" required minlenght="6">
+      <div class="alert alert-danger" *ngIf="password?.errors?.['required']">email is required</div>
+
+      <div class="ceter mt-3">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+      <span class="mt-5 text-light">new to our platform? <a routerLink="/signUp">sign Up!</a></span>
+    </form>
+</div>

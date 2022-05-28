@@ -1,0 +1,17 @@
+<div class="container-fluid text-light">
+  <div class="row m-auto px-3 mt-5">
+    <div  *ngFor='let object of dataFav, let i = index' class="col-md-3 d-flex justify-content-around">
+    <div class="card mb-5"  style="width: 18rem;">
+        <img src="https://image.tmdb.org/t/p/w500{{object.poster_path}}" class="card-img-top" alt="..." [routerLink]="['/details',object.id]">
+        <div class="card-body text-dark">
+          <h5 class="card-text">{{object.original_title}}</h5>
+          <p>{{object.id}}</p>
+          <div class="icon-bar" ng-repeat="item in dataId" >
+            <fa-icon [icon]="['far','heart']"  *ngIf="!object.adult"></fa-icon>
+            <fa-icon [icon]="['fas','heart']"  *ngIf="object.adult"></fa-icon>
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>

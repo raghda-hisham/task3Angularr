@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="card d-flex flex-row justify-content-between my-5">
+    <img  class="card-img-top w-25 bg-warning" [src]="img_url" alt="...">
+    <div class="card-body bg-dark text-light w-50 p-5">
+      <h5 class="card-text mb-4">{{data.original_title}}</h5>
+      <div class="mb-4">vote_average: {{data.vote_average}}</div>
+      <div class="describtion fs-5">describtion:</div>
+      <p>{{data.overview}}</p>
+    </div>
+  </div>
+  <h3 class="text-light">comments :</h3>
+  <div class="comments p-3" *ngFor="let comments of postComments, let i = index">
+      <div class="bg-light comment w-100 d-flex" >
+            <div class="user-img">
+              <img class="shadow" src="../../assets/png-transparent-computer-icons-user-avatar-woman-avatar-computer-business-conversation.png">
+            </div>
+            <div class="comment-left">
+              <div class="bg-light w-100 d-flex">
+                    <div class="text-dark shadow comment-text">
+                        <h3>user</h3>
+                        <p>{{comments}}</p>
+                    </div>
+                    <div class="replay-delete">
+                        <div class="replay">replay</div>
+                        <div class="delete" (click)="delete(i)">delete</div>
+                    </div>
+              </div><!---->
+              <!--replay-section-->
+            </div>
+      </div>
+  </div>
+  <div class="add-comment p-3">
+    <textarea [(ngModel)]="comment" class="w-100"></textarea>
+    <button (click)="post()" class="btn btn-primary text-light">comment</button>
+  </div>
+
+</div>
